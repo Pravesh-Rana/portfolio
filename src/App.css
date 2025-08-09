@@ -73,9 +73,9 @@ section { padding: 6rem 0; }
 .project-link { font-size: 0.9rem; font-weight: 500; text-decoration: none; white-space: nowrap; padding: 0.5rem 1rem; border-radius: 5px; border: 1px solid; transition: all 0.3s ease; }
 .github-link { color: var(--accent-color); border-color: var(--accent-color); }
 .github-link:hover { background-color: var(--accent-color); color: var(--background-color); }
-.powerbi-link { color: #42a758; border-color: #42a758; }
-.powerbi-link:hover { background-color: #42a758; color: var(--background-color); }
-.tag { background-color: rgba(97, 133, 133, 0.1); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; }
+.powerbi-link { color: #F2C811; border-color: #F2C811; }
+.powerbi-link:hover { background-color: #F2C811; color: var(--background-color); }
+.tag { background-color: rgba(3, 218, 198, 0.1); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; }
 
 /* Education & Extra-Curricular Section Styles */
 .education-card h3, .extracurricular-card h3 { color: var(--accent-color); }
@@ -117,32 +117,40 @@ section { padding: 6rem 0; }
     h2 { font-size: 2rem; }
     .card { padding: 1.5rem; }
 
-    /* Header adjustments */
-    .header { padding: 1rem; justify-content: center; }
-    .logo { display: none; }
-    .navbar a { margin: 0 0.5rem; font-size: 0.9rem; }
+    /* --- KEY CHANGE HERE: HEADER & NAVBAR --- */
+    .header {
+        padding: 0.5rem; /* Reduced padding */
+        min-height: 50px; /* Ensure header has a consistent height */
+    }
+    .logo {
+        display: none; /* Hide logo text to maximize space */
+    }
+    .navbar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* THIS IS THE FIX: Allows items to wrap to the next line */
+        justify-content: center; /* Centers the links horizontally */
+        align-items: center;
+    }
+    .navbar a {
+        margin: 0.25rem 0.5rem; /* Adds vertical and horizontal spacing */
+        font-size: 0.9rem;
+    }
 
-    /* --- KEY CHANGE HERE: HOME SECTION --- */
+    /* Home section remains side-by-side but scaled down */
     .home {
-        flex-direction: row; /* This keeps the layout side-by-side */
-        text-align: left; /* Keeps text left-aligned */
+        flex-direction: row;
+        text-align: left;
         padding-top: 5rem;
         padding-bottom: 2rem;
-        gap: 1.5rem; /* Reduced gap for smaller screens */
-        min-height: auto; /* Let content define height on mobile */
+        gap: 1.5rem;
+        min-height: auto;
     }
-    .home-text {
-        text-align: left; /* Explicitly keep text left-aligned */
-    }
-    .home-img {
-        width: 150px;  /* Reduced image size */
-        height: 150px;
-    }
-    .home-buttons, .home-socials {
-        justify-content: flex-start; /* Keep buttons left-aligned */
-    }
+    .home-text { text-align: left; }
+    .home-img { width: 150px; height: 150px; }
+    .home-buttons, .home-socials { justify-content: flex-start; }
 
-    /* --- TIMELINE BECOMES SINGLE-COLUMN (This is still good practice) --- */
+    /* Timeline becomes single-column */
     .timeline-container::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 15px; }
     .timeline-item.left, .timeline-item.right { left: 0; }
