@@ -208,7 +208,8 @@ const Contact = () => {
       <AnimatedSection animationClass="animate-fade-up">
         <h2>Get In Touch</h2>
         <p className="contact-intro">Have a question or want to work together? Leave your details below, and I'll get back to you as soon as possible.</p>
-        <form className="contact-form" action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+        <form name="contact" className="contact-form" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <div className="form-group"><label htmlFor="name">Name</label><input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} /></div>
           <div className="form-group"><label htmlFor="email">Email</label><input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} /></div>
           <div className="form-group"><label htmlFor="message">Message</label><textarea id="message" name="message" rows="5" required value={formData.message} onChange={handleChange}></textarea></div>
