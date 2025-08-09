@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+/* --- Final Dark Theme with Corrected Layouts & Spacing --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background-color: #000000;
+  --card-color: #121315;
+  --primary-text-color: #e0e0e0;
+  --secondary-text-color: #a0a0a0;
+  --accent-color: #15a033;
+  --accent-hover-color: #000000;
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  /* --- FIX: Increased line height for better readability site-wide --- */
+  line-height: 1.8;
+}
+.App { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+/* General Elements & Headers */
+h1, h2, h3 { color: var(--primary-text-color); font-weight: 600; }
+h1 { font-size: 3.5rem; color: var(--accent-color); }
+h2 { font-size: 2.5rem; border-bottom: 3px solid var(--accent-color); padding-bottom: 0.5rem; margin-bottom: 4rem; }
+h3 { font-size: 1.5rem; }
+
+/* --- FIX: Justified text and increased bottom margin for all paragraphs --- */
+p {
+  color: var(--secondary-text-color);
+  margin-bottom: 1.25rem; /* Increased from 1rem */
+  text-align: left;
+}
+section { padding: 6rem 0; }
+
+/* Header Nav */
+.header { background: rgba(18, 18, 18, 0.85); backdrop-filter: blur(10px); position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; border-bottom: 1px solid var(--border-color); }
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-text-color); }
+.navbar a { font-size: 1rem; color: var(--primary-text-color); text-decoration: none; margin-left: 2rem; }
+
+/* Home Section */
+.home { display: flex; align-items: center; justify-content: center; min-height: 100vh; gap: 4rem; }
+.home-img { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 5px solid var(--accent-color); box-shadow: 0 0 25px rgba(3, 218, 198, 0.2); }
+.home-text { max-width: 600px; text-align: left; }
+.home-text .subtitle { font-size: 1.25rem; font-weight: 400; color: var(--primary-text-color); margin-bottom: 1.5rem; }
+.home-buttons { display: flex; gap: 1rem; margin-top: 2.5rem; margin-bottom: 2.5rem; }
+.btn { padding: 0.75rem 1.5rem; border: 1px solid var(--accent-color); background-color: transparent; color: var(--accent-color); border-radius: 5px; text-decoration: none; transition: all 0.3s ease; }
+.btn:hover { background-color: var(--accent-color); color: var(--background-color); }
+.home-socials a { color: var(--secondary-text-color); font-size: 1.5rem; transition: all 0.3s ease; margin-right: 2rem; }
+.home-socials a:hover { color: var(--accent-color); }
+
+/* Scroll Animation Styles */
+.animate-on-scroll { opacity: 0; transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.animate-on-scroll.is-visible { opacity: 1; transform: none !important; }
+.animate-fade-up { transform: translateY(50px); }
+.animate-slide-in-left { transform: translateX(-100px); }
+.animate-slide-in-right { transform: translateX(100px); }
+
+/* Timeline for Work Experience */
+.timeline-container { position: relative; width: 100%; margin: 0 auto; }
+.timeline-container::after { content: ''; position: absolute; width: 3px; background-color: var(--accent-color); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
+.timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+.timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--background-color); border: 4px solid var(--accent-color); top: 15px; border-radius: 50%; z-index: 1; }
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+.timeline-item.right::after { left: -10px; }
+.timeline-content { padding: 2rem; background-color: var(--card-color); position: relative; border-radius: 8px; border: 1px solid var(--border-color); }
+.timeline-content h3 { color: var(--accent-color); margin-bottom: 0.5rem; }
+/* --- FIX: Added specific margin for subtitle in timeline --- */
+.timeline-content .card-subtitle {
+    margin-bottom: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Generic Card Styles (Projects, Education etc.) */
+.card { background-color: var(--card-color); padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); display: flex; flex-direction: column; height: 100%; }
+/* --- FIX: Added specific margin for card titles --- */
+.card h3 {
+    margin-bottom: 1rem;
 }
+.project-grid, .education-grid, .extracurricular-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+.extracurricular-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card-footer { margin-top: auto; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.project-tags { flex-grow: 1; }
+.project-links { display: flex; gap: 0.75rem; flex-shrink: 0; }
+.project-link { font-size: 0.9rem; font-weight: 500; text-decoration: none; white-space: nowrap; padding: 0.5rem 1rem; border-radius: 5px; border: 1px solid; transition: all 0.3s ease; }
+.github-link { color: var(--accent-color); border-color: var(--accent-color); }
+.github-link:hover { background-color: var(--accent-color); color: var(--background-color); }
+.powerbi-link { color: #F2C811; border-color: #F2C811; }
+.powerbi-link:hover { background-color: #F2C811; color: var(--background-color); }
+.tag { background-color: rgba(80, 95, 91, 0.1); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* Education & Extra-Curricular Section Styles */
+.education-card h3, .extracurricular-card h3 { color: var(--accent-color); }
+.education-card .degree { font-weight: 500; color: var(--primary-text-color); }
+.extracurricular-card { padding: 2rem; }
 
-.App-link {
-  color: #61dafb;
-}
+/* Skills Section */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.skill-category { background-color: var(--card-color); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; }
+.skill-category h4 { color: var(--primary-text-color); font-weight: 600; margin-bottom: 1.5rem; font-size: 1.2rem; }
+.skill-category ul { list-style: none; padding: 0; }
+.skill-category ul li { display: flex; align-items: center; margin-bottom: 1rem; color: var(--secondary-text-color); font-size: 1rem; }
+.skill-category ul li svg { color: var(--accent-color); font-size: 1.25rem; margin-right: 1rem; flex-shrink: 0; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Other Projects Button */
+.other-projects-container { text-align: center; margin-top: 3rem; }
+.btn.btn-solid { background-color: var(--accent-color); color: var(--background-color); font-weight: 600; }
+.btn.btn-solid:hover { background-color: var(--accent-hover-color); border-color: var(--accent-hover-color); }
+
+/* Contact Form */
+.contact-intro { text-align: center; max-width: 600px; margin: -2rem auto 3rem auto; }
+.contact-form { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.form-group label { margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 5px; font-family: 'Poppins', sans-serif; font-size: 1rem; background-color: var(--card-color); border: 1px solid var(--border-color); color: var(--primary-text-color); }
+.submit-btn { align-self: flex-start; background-color: var(--accent-color); color: var(--background-color); font-weight: 600; }
+
+/* Footer */
+.footer { text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid var(--border-color); }
