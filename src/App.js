@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 // --- UPDATED ICON IMPORTS ---
-import { FaPython, FaDatabase, FaChartBar, FaBrain, FaFileExcel, FaGithub, FaReact, FaCertificate, FaAward, FaUsers, FaChartArea, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaPython, FaDatabase, FaChartBar, FaBrain, FaFileExcel, FaGithub, FaCertificate, FaAward, FaUsers, FaChartArea, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { SiSap } from 'react-icons/si';
 
 import './App.css';
