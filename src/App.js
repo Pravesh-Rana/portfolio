@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 // --- UPDATED ICON IMPORTS ---
@@ -201,54 +200,18 @@ const ExtraCurricular = ({ activities }) => (
 );
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [formStatus, setFormStatus] = useState('');
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formData })
-    })
-    .then(() => {
-        setFormStatus('Thank you! Your message has been sent.');
-        setFormData({ name: '', email: '', message: '' }); // Clear the form
-    })
-    .catch(error => {
-        setFormStatus(`Oops! There was an error: ${error}`);
-    });
-  };
-
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-
   return (
     <section id="contact">
       <AnimatedSection animationClass="animate-fade-up">
         <h2>Get In Touch</h2>
-        <p className="contact-intro">Have a question or want to work together? Leave your details below, and I'll get back to you as soon as possible.</p>
-        
-        <form name="contact" className="contact-form" onSubmit={handleSubmit} data-netlify="true" data-netlify-honeypot="bot-field">
-          {/* This hidden input is required for Netlify's backend. */}
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
-
-          <div className="form-group"><label htmlFor="name">Name</label><input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} /></div>
-          <div className="form-group"><label htmlFor="email">Email</label><input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} /></div>
-          <div className="form-group"><label htmlFor="message">Message</label><textarea id="message" name="message" rows="5" required value={formData.message} onChange={handleChange}></textarea></div>
-          <button type="submit" className="btn btn-solid">Send Message</button>
-        </form>
-
-        {/* Display a success or error message after submission */}
-        {formStatus && <p className="form-status">{formStatus}</p>}
-
+        <p className="contact-intro">
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. The best way to reach me is by email.
+        </p>
+        <div className="contact-button-container">
+          <a href="mailto:ranapravesh30@gmail.com" className="btn btn-solid contact-btn">
+            Send me an Email
+          </a>
+        </div>
       </AnimatedSection>
     </section>
   );

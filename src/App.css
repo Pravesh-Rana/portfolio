@@ -6,7 +6,7 @@
   --card-color: #121315;
   --primary-text-color: #e0e0e0;
   --secondary-text-color: #a0a0a0;
-  --accent-color: #15a033;
+  --accent-color: #42a758;
   --accent-hover-color: #000000;
   --border-color: rgba(255, 255, 255, 0.1);
 }
@@ -88,8 +88,8 @@ section { padding: 6rem 0; }
 .project-link { font-size: 0.9rem; font-weight: 500; text-decoration: none; white-space: nowrap; padding: 0.5rem 1rem; border-radius: 5px; border: 1px solid; transition: all 0.3s ease; }
 .github-link { color: var(--accent-color); border-color: var(--accent-color); }
 .github-link:hover { background-color: var(--accent-color); color: var(--background-color); }
-.powerbi-link { color: #F2C811; border-color: #F2C811; }
-.powerbi-link:hover { background-color: #F2C811; color: var(--background-color); }
+.powerbi-link { color: #42a758; border-color: #42a758; }
+.powerbi-link:hover { background-color: #42a758; color: var(--background-color); }
 .tag { background-color: rgba(80, 95, 91, 0.1); color: var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; }
 
 /* Education & Extra-Curricular Section Styles */
@@ -111,20 +111,19 @@ section { padding: 6rem 0; }
 .btn.btn-solid:hover { background-color: var(--accent-hover-color); border-color: var(--accent-hover-color); }
 
 /* Contact Form */
-.contact-intro { text-align: center; max-width: 600px; margin: -2rem auto 3rem auto; }
-.contact-form { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
-.form-group label { margin-bottom: 0.5rem; font-weight: 500; }
-.form-group input, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 5px; font-family: 'Poppins', sans-serif; font-size: 1rem; background-color: var(--card-color); border: 1px solid var(--border-color); color: var(--primary-text-color); }
-.submit-btn { align-self: flex-start; background-color: var(--accent-color); color: var(--background-color); font-weight: 600; }
+.contact-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: -2rem auto 2.5rem auto;
+}
+.contact-button-container {
+  text-align: center;
+}
+.contact-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
 
 /* Footer */
 .footer { text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid var(--border-color); }
-
-/* --- Add this to the end of your App.css file --- */
-
-.form-status {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-weight: 500;
-  color: var(--accent-color);
-}
