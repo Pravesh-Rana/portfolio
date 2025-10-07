@@ -1,3 +1,4 @@
+import React from 'react'; // Corrected: Removed useState as it's no longer needed
 import { useInView } from 'react-intersection-observer';
 
 // --- UPDATED ICON IMPORTS ---
@@ -35,7 +36,6 @@ const Header = () => (
   </header>
 );
 
-// --- UPDATED HOME COMPONENT WITH NEW ICONS ---
 const Home = () => (
   <section id="home" className="home">
     <img src="/profile-photo.jpg" alt="Pravesh Rana" className="home-img" />
@@ -49,7 +49,6 @@ const Home = () => (
         <a href="/Pravesh_Rana_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn">Download Resume</a>
       </div>
       <div className="home-socials">
-        {/* --- ICONS HAVE BEEN REPLACED HERE --- */}
         <a href="mailto:ranapravesh30@gmail.com" aria-label="Email"><FaEnvelope /></a>
         <a href="https://www.linkedin.com/in/pravesh-rana/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
         <a href="https://github.com/Pravesh-Rana" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
@@ -232,12 +231,75 @@ const workExperienceData = [
     { title: "Business Analyst", company: "Shree Construction Company", duration: "Dec 2023 - July 2024", description: "Conducted data-driven analysis to optimize project costs and resource allocation. Managed tenders, securing 3 high-value contracts worth $2M+ and enhancing project profitability by almost 15%.", tags: ["Data Analysis", "Financial Modelling", "Cost Optimization"] },
     { title: "Analyst Intern", company: "Emerzin Media", duration: "Jul 2023 – Nov 2023", description: "Designed data visualization dashboards to track real-time sales performance, contributing to surpassing sales goals by 30%. Revised e-commerce marketing strategy using targeted Google Ads.", tags: ["Data Visualization", "Sales Analytics", "Digital Marketing", "Google Ads"] },
 ];
+
+// --- THIS IS THE UPDATED PROJECTS DATA ARRAY ---
 const projectsData = [
-    { title: "US Flights Decision Support System", description: "Engineered a dynamic data model using DAX and Power Query to process 1M+ flight records, enabling decision-makers to explore patterns by airline, route, and time period.", outcome: "Delivered actionable insights on delay causes and high-risk routes, supporting data-driven scheduling and resource allocation.", tags: ["Power BI", "DAX", "Power Query", "Data Modeling"], githubLink: "", powerBiLink: "https://app.powerbi.com/view?r=eyJrIjoiNmZhMjE2YzYtZTY3Yi00ZDBiLWI5NDQtZWQxYmNmMzQ5MTFmIiwidCI6IjQyMGVjNTg5LWE4NjYtNGFkMC05YTU3LWU2MDQ5ZTBkM2JjMCIsImMiOjh9" },
-    { title: "Fraud Transaction Identification", description: "Developed a classification model to detect fraudulent transactions using supervised learning.", outcome: "Achieved over 80% accuracy and increased detection precision by 15% via hyperparameter tuning on a 240K+ transaction dataset.", tags: ["ML", "Python", "Classification"], githubLink: "https://github.com/Pravesh-Rana", powerBiLink: "" },
-    { title: "Big Mart Sales Prediction", description: "Developed a linear regression model in Python to predict sales for Big Mart.", outcome: "The model achieved a prediction accuracy of over 85%, providing valuable insights for inventory management.", tags: ["ML", "Python", "Regression"], githubLink: "https://github.com/Pravesh-Rana", powerBiLink: "" },
-    { title: "SAP ByDesign Implementation", description: "Led a full-cycle Order-to-Cash (O2C) process simulation using SAP ByDesign.", outcome: "Gained hands-on experience in ERP workflows, encompassing sales orders, invoicing, inventory, and financial reconciliation.", tags: ["SAP", "ERP", "Business Process"], githubLink: "", powerBiLink: "" },
+    {
+      title: "Reder Telecom Customer Churn Prediction",
+      description: "Addressing high customer churn rates by developing a predictive model to identify clients at risk of leaving and to understand the key factors driving their decisions.",
+      outcome: "Developed a machine learning model to proactively identify at-risk customers, enabling targeted retention strategies to reduce churn and improve customer loyalty.",
+      tags: ["Churn Prediction", "Machine Learning", "Python", "Sklearn"],
+      githubLink: "",
+      powerBiLink: ""
+    },
+    {
+      title: "FreshCart Digital Ad Spend Optimization",
+      description: "Analyzed FreshCart's past advertising data to address inefficient ad spend and identify the most effective marketing channels in a competitive e-commerce landscape.",
+      outcome: "Created a Power BI dashboard to evaluate campaign effectiveness and identify top-performing channels, providing actionable recommendations for budget reallocation to maximize ROI.",
+      tags: ["Power BI", "Marketing Analytics", "ROI Analysis", "Excel"],
+      githubLink: "",
+      powerBiLink: ""
+    },
+    {
+      title: "Zipco Real Estate ETL Pipeline",
+      description: "Tackled an inefficient and disparate data workflow by developing a sophisticated ETL pipeline to manage diverse property data sources for Zipco Real Estate Agency.",
+      outcome: "Automated the entire data workflow using Python and AWS S3, ensuring data accuracy and loading cleaned property records into a PostgreSQL database for scalable analytics.",
+      tags: ["ETL", "Python", "SQL", "PostgreSQL", "AWS S3"],
+      githubLink: "",
+      powerBiLink: ""
+    },
+    {
+      title: "E-Shop Pro Customer Retention Analysis",
+      description: "Addressed declining customer retention rates at E-Shop Pro by leveraging underutilized customer data to gain insights into purchasing behavior and preferences.",
+      outcome: "Conducted a cohort analysis to identify crucial retention trends and pinpoint churn patterns, providing a clear path to developing strategies for improving customer loyalty.",
+      tags: ["Cohort Analysis", "Customer Retention", "Business Analytics"],
+      githubLink: "",
+      powerBiLink: ""
+    },
+    {
+      title: "US Flights Decision Support System",
+      description: "Engineered a dynamic data model using DAX and Power Query to process 1M+ flight records, enabling decision-makers to explore patterns by airline, route, and time period.",
+      outcome: "Delivered actionable insights on delay causes and high-risk routes, supporting data-driven scheduling and resource allocation.",
+      tags: ["Power BI", "DAX", "Power Query", "Data Modeling"],
+      githubLink: "",
+      powerBiLink: "https://app.powerbi.com/view?r=eyJrIjoiNmZhMjE2YzYtZTY3Yi00ZDBiLWI5NDQtZWQxYmNmMzQ5MTFmIiwidCI6IjQyMGVjNTg5LWE4NjYtNGFkMC05YTU3LWU2MDQ5ZTBkM2JjMCIsImMiOjh9"
+    },
+    {
+      title: "Fraud Transaction Identification",
+      description: "Developed a classification model to detect fraudulent transactions using supervised learning.",
+      outcome: "Achieved over 80% accuracy and increased detection precision by 15% via hyperparameter tuning on a 240K+ transaction dataset.",
+      tags: ["ML", "Python", "Classification"],
+      githubLink: "https://github.com/Pravesh-Rana",
+      powerBiLink: ""
+    },
+    {
+      title: "Big Mart Sales Prediction",
+      description: "Developed a linear regression model in Python to predict sales for Big Mart.",
+      outcome: "The model achieved a prediction accuracy of over 85%, providing valuable insights for inventory management.",
+      tags: ["ML", "Python", "Regression"],
+      githubLink: "https://github.com/Pravesh-Rana",
+      powerBiLink: ""
+    },
+    {
+      title: "SAP ByDesign Implementation",
+      description: "Led a full-cycle Order-to-Cash (O2C) process simulation using SAP ByDesign.",
+      outcome: "Gained hands-on experience in ERP workflows, encompassing sales orders, invoicing, inventory, and financial reconciliation.",
+      tags: ["SAP", "ERP", "Business Process"],
+      githubLink: "",
+      powerBiLink: ""
+    },
 ];
+
 const educationData = [
     { institution: "University College Dublin", degree: "MSc. Business Analytics", duration: "Sept 2024 - Aug 2025", modules: ["Statistics", "Python", "Business Decisions", "Technology Consulting", "Optimization"] },
     { institution: "Bharati Vidyapeeth's College of Engineering", degree: "B.Tech. Electronics & Communication Engineering", duration: "Aug 2020 - July 2024", modules: ["Digital Communication", "Adhoc Networks", "VLSI Design", "Microwave Engineering"] }
