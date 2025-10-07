@@ -239,7 +239,7 @@ const projectsData = [
       description: "Addressing high customer churn rates by developing a predictive model to identify clients at risk of leaving and to understand the key factors driving their decisions.",
       outcome: "Developed a machine learning model to proactively identify at-risk customers, enabling targeted retention strategies to reduce churn and improve customer loyalty.",
       tags: ["Churn Prediction", "Machine Learning", "Python", "Sklearn"],
-      githubLink: "",
+      githubLink: "https://github.com/Pravesh-Rana",
       powerBiLink: ""
     },
     {
@@ -247,7 +247,7 @@ const projectsData = [
       description: "Analyzed FreshCart's past advertising data to address inefficient ad spend and identify the most effective marketing channels in a competitive e-commerce landscape.",
       outcome: "Created a Power BI dashboard to evaluate campaign effectiveness and identify top-performing channels, providing actionable recommendations for budget reallocation to maximize ROI.",
       tags: ["Power BI", "Marketing Analytics", "ROI Analysis", "Excel"],
-      githubLink: "",
+      githubLink: "https://github.com/Pravesh-Rana",
       powerBiLink: ""
     },
     {
@@ -255,7 +255,7 @@ const projectsData = [
       description: "Tackled an inefficient and disparate data workflow by developing a sophisticated ETL pipeline to manage diverse property data sources for Zipco Real Estate Agency.",
       outcome: "Automated the entire data workflow using Python and AWS S3, ensuring data accuracy and loading cleaned property records into a PostgreSQL database for scalable analytics.",
       tags: ["ETL", "Python", "SQL", "PostgreSQL", "AWS S3"],
-      githubLink: "",
+      githubLink: "https://github.com/Pravesh-Rana",
       powerBiLink: ""
     },
     {
@@ -263,7 +263,7 @@ const projectsData = [
       description: "Addressed declining customer retention rates at E-Shop Pro by leveraging underutilized customer data to gain insights into purchasing behavior and preferences.",
       outcome: "Conducted a cohort analysis to identify crucial retention trends and pinpoint churn patterns, providing a clear path to developing strategies for improving customer loyalty.",
       tags: ["Cohort Analysis", "Customer Retention", "Business Analytics"],
-      githubLink: "",
+      githubLink: "https://github.com/Pravesh-Rana",
       powerBiLink: ""
     },
     {
