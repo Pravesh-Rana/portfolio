@@ -171,8 +171,9 @@ const Skills = () => (
         <div className="skill-category">
           <h4>Certifications</h4>
           <ul>
-            <li><FaCertificate /> Fabric Analytics Engineer (In Progress)</li>
+            <li><FaCertificate /> SAP Business Data Cloud</li>
             <li><FaAward /> UCD Global Leadership Programme</li>
+            <li><FaAward /> OCI Gen AI Professional 2025</li>
             <li><FaAward /> McKinsey Forward Program</li>
             <li><FaUsers /> Bloomberg Market Concepts</li>
           </ul>
